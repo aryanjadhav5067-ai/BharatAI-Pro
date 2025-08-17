@@ -1,0 +1,254 @@
+/* styles.css — BharatPro.AI */
+
+/* ===== CSS Variables ===== */
+:root {
+  --font-main: 'Inter', sans-serif;
+  --bg-color: #f9fafc;
+  --fg-color: #111;
+  --accent: #2196f3;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border-radius: 14px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --fg-color: #eee;
+  --accent: #00e5ff;
+  --card-bg: rgba(18, 18, 18, 0.7);
+}
+
+/* ===== Core Layout ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--bg-color);
+  color: var(--fg-color);
+  min-height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* ===== Glass Card ===== */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px) saturate(1.4);
+  border: var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.glass {
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+
+/* ===== Header ===== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.titles h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.titles .accent {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Sidebar & Main Grid ===== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+}
+@media (max-width: 880px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar .sticky {
+  position: sticky;
+  top: 1rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  transition: background 0.3s, opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* ===== Chips ===== */
+.chip {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.chip.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* ===== Search ===== */
+.search {
+  display: flex;
+  gap: 0.5rem;
+}
+.search input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero h2 {
+  margin-top: 0;
+}
+.hero-illustration {
+  max-width: 300px;
+}
+
+/* ===== News Feed ===== */
+.feed-grid {
+  display: grid;
+  gap: 1rem;
+}
+.feed-item {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: var(--card-bg);
+  border: var(--glass-border);
+}
+.feed-item h4 {
+  margin: 0 0 0.4rem;
+}
+
+/* ===== Modal ===== */
+.modal {
+  max-width: 480px;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0;
+}
+.modal-card {
+  display: flex;
+  flex-direction: column;
+}
+.modal-header, .modal-footer {
+  padding: 1rem;
+  background: var(--card-bg);
+}
+.modal-body {
+  padding: 1rem;
+}
+.field {
+  margin-bottom: 1rem;
+}
+.field label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== Aurora Background ===== */
+.aurora {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0.05;
+  animation: auroraMove 20s infinite linear;
+  z-index: -1;
+}
+.aurora.a2 {
+  animation-duration: 30s;
+}
+
+@keyframes auroraMove {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(25%,25%); }
+  100% { transform: translate(0,0); }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  margin: 2rem 0 1rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: center;
+}

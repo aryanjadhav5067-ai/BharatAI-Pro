@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BharatPro.AI — World News & Knowledge Hub</title>
+  <meta name="description" content="BharatPro.AI — Fast, elegant world news & knowledge hub with privacy-first design." />
+  <meta name="keywords" content="India news, World news, Business, Technology, Finance, BharatPro AI" />
+  <meta name="author" content="BharatPro.AI" />
+  <meta property="og:title" content="BharatPro.AI — World News & Knowledge Hub" />
+  <meta property="og:description" content="Breaking news, deep dives, and global intelligence — fast, private, and powerful." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bharatpro.ai/" />
+  <meta property="og:image" content="/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BharatPro.AI — World News & Knowledge Hub" />
+  <meta name="twitter:description" content="Beautifully organized world intelligence with privacy-first defaults." />
+  <meta name="twitter:image" content="/preview.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <header class="site-header glass container">
+    <div class="brand">
+      <div class="logo">🧠</div>
+      <div class="titles">
+        <h1>BharatPro.<span class="accent">AI</span></h1>
+        <p class="tagline">Beautiful world intelligence — fast, private, powerful.</p>
+      </div>
+    </div>
+    <nav class="header-actions" aria-label="Site Controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle dark/light theme" aria-label="Toggle theme">🌗</button>
+      <button id="settingsBtn" class="icon-btn" title="API Settings" aria-label="API Settings">⚙️</button>
+      <div id="authArea">
+        <div id="googleSignInBtn" class="g-btn"></div>
+        <div id="profile" class="profile hidden" aria-haspopup="menu">
+          <img id="profilePic" alt="User profile picture" class="avatar" />
+          <span id="profileName" class="profile-name"></span>
+          <div class="menu" role="menu">
+            <button id="signOutBtn" role="menuitem">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="ad-block container" aria-label="Advertisement">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXX"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(window.adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </section>
+  <main class="container main-grid">
+    <aside class="sidebar">
+      <div class="card sticky">
+        <h3>Quick Search</h3>
+        <form id="searchForm" class="search" role="search">
+          <input id="searchInput" type="search" placeholder="Search world, India, tech, finance…" aria-label="Search news" />
+          <button class="btn" type="submit">🔍 Search</button>
+        </form>
+        <div class="topics" role="tablist" aria-label="Topics">
+          <button class="chip active" data-topic="top">Top</button>
+          <button class="chip" data-topic="india">India</button>
+          <button class="chip" data-topic="world">World</button>
+          <button class="chip" data-topic="business">Business</button>
+          <button class="chip" data-topic="technology">Technology</button>
+          <button class="chip" data-topic="science">Science</button>
+          <button class="chip" data-topic="health">Health</button>
+          <button class="chip" data-topic="entertainment">Entertainment</button>
+          <button class="chip" data-topic="sports">Sports</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Live Time (IST)</h3>
+        <p id="clock" class="clock">Loading…</p>
+        <p class="muted">Fresh headlines auto-refresh.</p>
+      </div>
+      <div class="card ad-card" aria-label="Sidebar Ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXX"
+             data-ad-slot="9876543210"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(window.adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+    </aside>
+    <section class="content">
+      <div class="hero card gradient">
+        <div>
+          <h2>All the world’s stories — gorgeously organized.</h2>
+          <p>Breaking news, deep dives, and trends, with your sign-in for a personalized touch. Add API keys for premium sources.</p>
+          <div class="hero-actions">
+            <button class="btn" id="refreshBtn">🔄 Refresh</button>
+            <a class="btn ghost" href="#about">ℹ️ About</a>
+          </div>
+        </div>
+        <img class="hero-illustration" alt="Global news illustration"
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='190'%3E%3Crect width='100%25' height='100%25' rx='22' fill='%23ffffff10'/%3E%3Cpath d='M24 150 Q 150 30 280 150' stroke='%23ffffff55' stroke-width='4' fill='none'/%3E%3Ccircle cx='90' cy='80' r='18' fill='%23ffffff44'/%3E%3Ccircle cx='210' cy='95' r='10' fill='%23ffffff33'/%3E%3C/svg%3E" />
+      </div>
+      <div id="feed" class="feed-grid" aria-live="polite" aria-busy="true"></div>
+      <div id="feedStatus" class="center muted" role="status">Fetching news…</div>
+      <div class="ad-block" aria-label="In-content Ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXX"
+             data-ad-slot="1111111111"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(window.adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+      <section id="about" class="card">
+        <h3>About BharatPro.AI</h3>
+        <p>A privacy-first front-end news & knowledge aggregator. Add your API keys for NewsAPI / GNews in <strong>Settings</strong>. Keys are stored only in your browser via <code>localStorage</code>.</p>
+        <ul class="bullets">
+          <li>Modern design (Glass + Aurora)</li>
+          <li>Dark/Light mode toggle</li>
+          <li>Topic chips + powerful search</li>
+          <li>Client-side aggregation & de-duplication</li>
+          <li>Privacy by default: no server storage</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+  <dialog id="settingsModal" class="modal">
+    <form method="dialog" class="modal-card">
+      <header class="modal-header">
+        <h3>API Settings</h3>
+        <button class="icon-btn" value="cancel" title="Close">✖</button>
+      </header>
+      <div class="modal-body">
+        <div class="field">
+          <label for="newsapiKey">NewsAPI.org key</label>
+          <input type="password" id="newsapiKey" placeholder="e.g. 123abc..." autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="gnewsKey">GNews.io key</label>
+          <input type="password" id="gnewsKey" placeholder="e.g. 123abc..." autocomplete="off" />
+        </div>
+        <p class="muted">Keys are stored locally in your browser only. Remove to disable provider.</p>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn" id="saveSettingsBtn" value="default">Save</button>
+        <button class="btn ghost" id="clearSettingsBtn" value="default">Clear</button>
+      </footer>
+    </form>
+  </dialog>
+  <footer class="site-footer center muted">
+    <p>© <span id="year"></span> BharatPro.AI — Designed in India 🇮🇳</p>
+  </footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
